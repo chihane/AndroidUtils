@@ -1,12 +1,16 @@
-/** SharedPreferences简易存取。 */
+import android.content.Context;
+import android.content.SharedPreferences;
+
+/** SharedPreferences CRUD。 */
 public class Prefs {
-    /**
-     * 向首选项中设置值。</br>
+    /** <p>Put a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value into
+     *  preferences file named as {@linkplain Context#getPackageName() packageName}.
      *
-     * value的实际类型需要是<b>boolean</b>、<b>float</b>、<b>int</b>、<b>long</b>、<b>String</b>之一，否则不作处理。
-     * */
+     *  @throws IllegalArgumentException If The type of <code>value</code> is not one of those.
+     *  @see android.content.SharedPreferences.Editor
+     *  */
     public static void put(Context context, String key, Object value) {
-        Editor editor = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).edit();
 
         if (value instanceof Boolean) {
             editor.putBoolean(key, (Boolean) value);
@@ -19,18 +23,24 @@ public class Prefs {
         } else if (value instanceof String) {
             editor.putString(key, (String) value);
         } else {
-            // 按说应该抛异常。
+            throw new IllegalArgumentException("Argument illegal, see JavaDocs.");
         }
 
         editor.commit();
     }
 
-    /** 从首选项中取值。 */
+    /** <p>Retrieve a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value from preferences.
+     *
+     *  @return value corresponds to <code>key</code> if <code>key</code> exists,
+     *  <code>defValue</code> otherwise.
+     *  @see SharedPreferences
+     *  @throws IllegalArgumentException If The type of <code>defValue</code> is not one of those.
+     *  */
     @SuppressWarnings("unchecked")
     public static <P> P get(Context context, String key, P defValue) {
         SharedPreferences prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
 
-        Object result = null;
+        Object result;
 
         if (defValue instanceof Boolean) {
             result = prefs.getBoolean(key, (Boolean) defValue);
@@ -42,6 +52,8 @@ public class Prefs {
             result = prefs.getLong(key, (Long) defValue);
         } else if (defValue instanceof String) {
             result = prefs.getString(key, (String) defValue);
+        } else {
+            throw new IllegalArgumentException("Argument illegal, see JavaDocs.");
         }
 
         return (P) result;
