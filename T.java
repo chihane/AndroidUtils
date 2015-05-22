@@ -8,7 +8,7 @@ public class T {
      *  @see Toast#makeText(Context, CharSequence, int)
      *  @see Toast#LENGTH_LONG
      */
-    public static void showLong(Context context, String text) {
+    public static void showLong(Context context, CharSequence text) {
         Toast.makeText(context, text, Toast.LENGTH_LONG).show();
     }
 
@@ -17,7 +17,7 @@ public class T {
      *  @see Toast#makeText(Context, CharSequence, int)
      *  @see Toast#LENGTH_SHORT
      */
-    public static void showShort(Context context, String text) {
+    public static void showShort(Context context, CharSequence text) {
         Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 }
