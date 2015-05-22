@@ -22,6 +22,8 @@ public class L {
             msg instanceof Short
             ) {
             return msg+"";
+        } else if (msg == null) {
+            return "null";
         } else {
             return msg.toString();
         }
