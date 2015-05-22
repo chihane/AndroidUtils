@@ -1,7 +1,7 @@
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/** SharedPreferences CRUD。 */
+/** SharedPreferences CRUD. */
 public class Prefs {
     /** <p>Put a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value into
      *  preferences file named as {@linkplain Context#getPackageName() packageName}.
