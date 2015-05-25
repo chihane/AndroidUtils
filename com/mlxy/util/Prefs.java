@@ -1,3 +1,5 @@
+package com.mlxy.util;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 

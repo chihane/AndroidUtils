@@ -1,3 +1,5 @@
+package com.mlxy.util;
+
 import android.util.Log;
 
 /** Simplified {@link android.util.Log}. */
