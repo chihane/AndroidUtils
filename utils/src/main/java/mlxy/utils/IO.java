@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class IO {
-    public static String readStringFromAssets(Context context, String assetsName) throws IOException {
-        InputStream in = context.getAssets().open(assetsName);
+    public static String readStringFromAsset(Context context, String assetName) throws IOException {
+        InputStream in = context.getAssets().open(assetName);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         byte[] buf = new byte[1024];
