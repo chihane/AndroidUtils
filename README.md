@@ -29,3 +29,10 @@ Encapsulated **android.widget.Toast**.
 
 	1. T.showLong(Context, CharSequence)
 	2. T.showShort(Context, CharSequence)
+	
+###IO
+
+Several IO-related APIs.
+
+    1. IO.readStringFromAsset(Context, String)
+    
