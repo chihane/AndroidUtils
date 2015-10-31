@@ -1,5 +1,8 @@
 # AndroidUtils
-Self-use Android util classes.
+
+##Integration
+
+    compile 'mlxy.utils:utils:1.0.1'
 
 ###L
 
