@@ -39,3 +39,9 @@ Several IO-related APIs.
 
     1. IO.readStringFromAsset(Context, String)
     
+###Device
+
+Device dependent utilities.
+
+    1. Device.dp2px(Context, float)
+    
