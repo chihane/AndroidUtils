@@ -1,7 +1,7 @@
 package mlxy.utils;
 
 public class S {
-    public static String join(Object[] array, char separator) {
+    public static String join(Object[] array, String separator) {
         if (array == null) {
             return null;
         }

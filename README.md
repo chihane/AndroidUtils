@@ -45,3 +45,9 @@ Device dependent utilities.
 
     1. Device.dp2px(Context, float)
     
+###S
+
+String utils.
+
+    1. S.join(Object[], String)
+    
