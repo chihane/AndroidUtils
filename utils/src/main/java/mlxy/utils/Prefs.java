@@ -33,7 +33,7 @@ public class Prefs {
 
     /** <p>Retrieve a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value from preferences.
      *
-     *  @return value corresponds to <code>key</code> if <code>key</code> exists,
+     *  @return value corresponding to <code>key</code> if <code>key</code> exists,
      *  <code>defValue</code> otherwise.
      *  @see SharedPreferences
      *  @throws IllegalArgumentException If The type of <code>defValue</code> is not one of those.
@@ -59,5 +59,16 @@ public class Prefs {
         }
 
         return (P) result;
+    }
+
+    /**
+     * <p>Remove the value corresponding to <code>key</code>.</p>
+     */
+    public static void remove(Context context, String key) {
+        SharedPreferences prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+
+        if (prefs.contains(key)) {
+            prefs.edit().remove(key).commit();
+        }
     }
 }
