@@ -1,7 +1,9 @@
 package mlxy.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 
 /** SharedPreferences CRUD. */
 public class Prefs {
@@ -12,6 +14,15 @@ public class Prefs {
      *  @see android.content.SharedPreferences.Editor
      *  */
     public static void put(Context context, String key, Object value) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            getValue(context, key, value).apply();
+        } else {
+            getValue(context, key, value).commit();
+        }
+    }
+
+    @SuppressLint("CommitPrefEdits")
+    private static SharedPreferences.Editor getValue(Context context, String key, Object value) {
         SharedPreferences.Editor editor = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).edit();
 
         if (value instanceof Boolean) {
@@ -28,7 +39,7 @@ public class Prefs {
             throw new IllegalArgumentException("Argument illegal, see JavaDocs.");
         }
 
-        editor.commit();
+        return editor;
     }
 
     /** <p>Retrieve a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value from preferences.
