@@ -2,7 +2,7 @@
 
 ##Integration
 
-    compile 'mlxy.utils:utils:1.0.1'
+    compile 'mlxy.utils:utils:1.0.8'
 
 ###L
 

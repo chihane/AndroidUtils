@@ -31,9 +31,9 @@ public class L {
         }
     }
 
-    /** <p>Send {@linkplain Log#VERBOSE VERBOSE} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send {@linkplain Log#VERBOSE VERBOSE} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
-     *  F**k, I don't speak English. I rewrote the sentence above over 10 times.<br/>Enough.<br/>Whatever.
+     *  F**k, I don't speak English. I rewrote the sentence above over 10 times.<br>Enough.<br>Whatever.
      *
      *  @param msg The message you would like to log.
      *  @see Log#v(String, String)
@@ -42,7 +42,7 @@ public class L {
         Log.v(TAG_VERBOSE, toStr(msg));
     }
 
-    /** <p>Send {@linkplain Log#DEBUG DEBUG} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send {@linkplain Log#DEBUG DEBUG} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
      *
      *  @param msg The message you would like to log.
@@ -52,7 +52,7 @@ public class L {
         Log.d(TAG_DEBUG, toStr(msg));
     }
 
-    /** <p>Send {@linkplain Log#INFO INFO} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send {@linkplain Log#INFO INFO} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
      *
      *  @param msg The message you would like to log.
@@ -62,7 +62,7 @@ public class L {
         Log.i(TAG_INFO, toStr(msg));
     }
 
-    /** <p>Send {@linkplain Log#WARN WARN} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send {@linkplain Log#WARN WARN} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
      *
      *  @param msg The message you would like to log.
@@ -72,7 +72,7 @@ public class L {
         Log.w(TAG_WARN, toStr(msg));
     }
 
-    /** <p>Send {@linkplain Log#ERROR ERROR} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send {@linkplain Log#ERROR ERROR} log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
      *
      *  @param msg The message you would like to log.
@@ -82,7 +82,7 @@ public class L {
         Log.e(TAG_ERROR, toStr(msg));
     }
 
-    /** <p>Send WTF log message in <b>primitive data types</b> or <b>String</b> as String literally,<br/>
+    /** <p>Send WTF log message in <b>primitive data types</b> or <b>String</b> as String literally,<br>
      *  send <code>msg.toString()</code> for other types.</p>
      *
      *  @param msg The message you would like to log.
