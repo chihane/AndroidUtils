@@ -1,6 +1,10 @@
 package mlxy.utils;
 
 public class S {
+    public static boolean isEmpty(String s) {
+        return s == null || s.length() == 0;
+    }
+
     public static String join(Object[] array, String separator) {
         if (array == null) {
             return null;
