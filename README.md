@@ -50,6 +50,7 @@ Device dependent utilities.
 String utils.
 
     1. S.join(Object[], String)
+    1. S.isEmpty(String)
 
 ### App
 
@@ -71,3 +72,7 @@ File utils.
 ### MD5
 
     1. MD5.encode(String)
+
+### Lists
+
+    1. Lists.isEmpty(List)
