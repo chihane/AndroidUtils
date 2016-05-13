@@ -2,10 +2,6 @@
 
 ## Integration
 
-Maven Central:
-
-    compile 'mlxy.utils:utils:1.0.9'
-
 JitPack:
 
     allprojects {
@@ -94,3 +90,4 @@ File utils.
 ### Lists
 
     1. Lists.isEmpty(List)
+    1. Lists.notEmpty(List)
