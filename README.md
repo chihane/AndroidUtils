@@ -2,7 +2,23 @@
 
 ## Integration
 
-    compile 'mlxy.utils:utils:1.0.8'
+Maven Central:
+
+    compile 'mlxy.utils:utils:1.0.9'
+
+JitPack:
+
+    allprojects {
+        repositories {
+            ...
+            maven { url "https://jitpack.io"}
+        }
+    }
+
+    dependencies {
+        ...
+        compile 'com.github.chihane:AndroidUtils:1.0.9'
+    }
 
 ### L
 
