@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 22
-        versionCode 8
-        versionName "1.0.8"
+        versionCode 9
+        versionName "1.0.9"
     }
     buildTypes {
         release {
@@ -25,7 +25,7 @@ dependencies {
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.8"
+version = "1.0.9"
 def siteUrl = 'https://github.com/mlxy/AndroidUtils'
 def gitUrl = 'https://github.com/mlxy/AndroidUtils.git'
 
