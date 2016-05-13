@@ -2,20 +2,16 @@
 
 ## Integration
 
-JitPack:
-
     allprojects {
         repositories {
             ...
             maven { url "https://jitpack.io"}
         }
     }
-    
-    
 
     dependencies {
         ...
-        compile 'com.github.chihane:AndroidUtils:1.0.9'
+        compile 'com.github.chihane:AndroidUtils:{release_version}'
     }
 
 ### L
