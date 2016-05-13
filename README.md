@@ -39,11 +39,11 @@ Several IO-related APIs.
 
     1. IO.readStringFromAsset(Context, String)
     
-### Device
+### Dev
 
 Device dependent utilities.
 
-    1. Device.dp2px(Context, float)
+    1. Dev.dp2px(Context, float)
     
 ### S
 
