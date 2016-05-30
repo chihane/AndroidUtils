@@ -87,3 +87,8 @@ File utils.
 
     1. Lists.isEmpty(List)
     1. Lists.notEmpty(List)
+
+### Arrs
+
+    1. Arrs.isEmpty(Object[])
+    1. Arrs.notEmpty(Object[])
