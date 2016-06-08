@@ -54,6 +54,7 @@ Several IO-related APIs.
 Device dependent utilities.
 
     1. Dev.dp2px(Context, float)
+    2. Dev.sp2px(Context, float)
     
 ### S
 
