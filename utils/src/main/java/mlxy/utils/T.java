@@ -11,7 +11,7 @@ public class T {
      *  @see Toast#LENGTH_LONG
      */
     public static void showLong(Context context, CharSequence text) {
-        Toast.makeText(context, text, Toast.LENGTH_LONG).show();
+        Toast.makeText(context.getApplicationContext(), text, Toast.LENGTH_LONG).show();
     }
 
     /** Show short Toast.
@@ -20,6 +20,6 @@ public class T {
      *  @see Toast#LENGTH_SHORT
      */
     public static void showShort(Context context, CharSequence text) {
-        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context.getApplicationContext(), text, Toast.LENGTH_SHORT).show();
     }
 }
