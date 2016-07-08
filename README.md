@@ -67,7 +67,8 @@ String utils.
 
 App utils.
 
-    1. App.getAppVersion(Context)
+    1. App.versionCode(Context)
+    1. App.versionName(Context)
 
 ### F
 
