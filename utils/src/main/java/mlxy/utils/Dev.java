@@ -1,6 +1,7 @@
 package mlxy.utils;
 
 import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.view.WindowManager;
 
 public class Dev {
@@ -20,5 +21,10 @@ public class Dev {
     public static int screenHeight(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         return wm.getDefaultDisplay().getHeight();
+    }
+
+    public static String id(Context context) {
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        return tm.getDeviceId();
     }
 }
