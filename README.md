@@ -94,3 +94,10 @@ File utils.
 
     1. Arrs.isEmpty(Object[])
     1. Arrs.notEmpty(Object[])
+    
+### Clip
+
+Clipboard utils.
+
+    1. Clip.copy(Context, String)
+    1. Clip.copy(Context, String, String)
