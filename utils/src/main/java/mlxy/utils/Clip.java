@@ -9,7 +9,7 @@ import android.os.Build;
 public class Clip {
     public static void copy(Context context, CharSequence text) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            copy(context, text);
+            copy(context, "label", text);
         } else {
             android.text.ClipboardManager manager = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
             manager.setText(text);
