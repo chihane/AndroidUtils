@@ -18,8 +18,13 @@ public class Clip {
 
     public static CharSequence pasteLatest(Context context) {
         ClipData data = manager(context).getPrimaryClip();
-        ClipData.Item item = data.getItemAt(0);
-        return item.getText();
+        if (data != null && data.getItemCount() > 0) {
+            ClipData.Item item = data.getItemAt(0);
+            if (item != null) {
+                return item.getText();
+            }
+        }
+        return null;
     }
 
     public static List<CharSequence> paste(Context context) {
@@ -27,8 +32,10 @@ public class Clip {
         List<CharSequence> result = new ArrayList<>();
         for (int i = 0; i < data.getItemCount(); i++) {
             ClipData.Item item = data.getItemAt(i);
-            CharSequence text = item.getText();
-            result.add(text);
+            if (item != null) {
+                CharSequence text = item.getText();
+                result.add(text);
+            }
         }
         return result;
     }
