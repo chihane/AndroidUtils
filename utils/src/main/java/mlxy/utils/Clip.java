@@ -1,24 +1,39 @@
 package mlxy.utils;
 
-import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.os.Build;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Clip {
     public static void copy(Context context, CharSequence text) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            copy(context, "label", text);
-        } else {
-            android.text.ClipboardManager manager = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-            manager.setText(text);
-        }
+        copy(context, "label", text);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static void copy(Context context, CharSequence label, CharSequence text) {
-        ClipboardManager manager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-        manager.setPrimaryClip(ClipData.newPlainText(label, text));
+        manager(context).setPrimaryClip(ClipData.newPlainText(label, text));
+    }
+
+    public static CharSequence pasteLatest(Context context) {
+        ClipData data = manager(context).getPrimaryClip();
+        ClipData.Item item = data.getItemAt(0);
+        return item.getText();
+    }
+
+    public static List<CharSequence> paste(Context context) {
+        ClipData data = manager(context).getPrimaryClip();
+        List<CharSequence> result = new ArrayList<>();
+        for (int i = 0; i < data.getItemCount(); i++) {
+            ClipData.Item item = data.getItemAt(i);
+            CharSequence text = item.getText();
+            result.add(text);
+        }
+        return result;
+    }
+
+    private static ClipboardManager manager(Context context) {
+        return (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
     }
 }
