@@ -1,4 +1,4 @@
-package mlxy.utils;
+package chihane.utils;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

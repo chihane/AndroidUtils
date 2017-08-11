@@ -1,4 +1,4 @@
-package mlxy.utils;
+package chihane.utils;
 
 public class Threads {
     public static void sleep(long millis) {
