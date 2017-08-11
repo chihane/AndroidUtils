@@ -1,6 +1,6 @@
 package mlxy.utils;
 
-public class S {
+public class Str {
     public static boolean isEmpty(String s) {
         return s == null || s.length() == 0;
     }
