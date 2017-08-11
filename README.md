@@ -12,6 +12,8 @@ allprojects {
 
 dependencies {
     // ...
-    compile 'com.github.chihane:AndroidUtils:{release_version}'
+    compile 'com.github.chihane.AndroidUtils:utils:{release_version}'
+    // Optional
+    compile 'com.github.chihane.AndroidUtils:utils-rx:{release_version}'
 }
 ```
