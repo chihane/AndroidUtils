@@ -1,9 +1,7 @@
 package chihane.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 
 /** SharedPreferences CRUD. */
 public class Prefs {
@@ -14,15 +12,6 @@ public class Prefs {
      *  @see android.content.SharedPreferences.Editor
      *  */
     public static void put(Context context, String key, Object value) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-            getValue(context, key, value).apply();
-        } else {
-            getValue(context, key, value).commit();
-        }
-    }
-
-    @SuppressLint("CommitPrefEdits")
-    private static SharedPreferences.Editor getValue(Context context, String key, Object value) {
         SharedPreferences.Editor editor = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).edit();
 
         if (value instanceof Boolean) {
@@ -39,7 +28,7 @@ public class Prefs {
             throw new IllegalArgumentException("Argument illegal, see JavaDocs.");
         }
 
-        return editor;
+        editor.apply();
     }
 
     /** <p>Retrieve a <b>boolean</b>/<b>float</b>/<b>int</b>/<b>long</b>/<b>String</b> value from preferences.
@@ -72,14 +61,16 @@ public class Prefs {
         return (P) result;
     }
 
-    /**
-     * <p>Remove the value corresponding to <code>key</code>.</p>
-     */
+    public static boolean hasKey(Context context, String key) {
+        SharedPreferences prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+        return prefs.contains(key);
+    }
+
     public static void remove(Context context, String key) {
         SharedPreferences prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
 
         if (prefs.contains(key)) {
-            prefs.edit().remove(key).commit();
+            prefs.edit().remove(key).apply();
         }
     }
 }
